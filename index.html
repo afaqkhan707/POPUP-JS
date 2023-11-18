@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>popup</title>
+  </head>
+
+  <body>
+    <div class="btn-div red">
+      <button class="popup-btn">Button</button>
+    </div>
+
+    <div class="popup-bg"></div>
+    <div class="popup-bg2"></div>
+
+    <div class="box">
+      <h3>Are you sure you want to Delete user</h3>
+      <div class="box-buttons">
+        <button class="box-btn yes">YES</button>
+        <button class="box-btn no">NO</button>
+      </div>
+    </div>
+    <div class="hello">
+      <h2>HELLO WORLD</h2>
+    </div>
+
+    <script>
+      const cliclBtn = document.querySelector('.popup-btn');
+      const bg = document.querySelector('.popup-bg');
+      const bg2 = document.querySelector('.popup-bg2');
+      const box = document.querySelector('.box');
+      const no = document.querySelector('.no');
+      const yes = document.querySelector('.yes');
+      const hello = document.querySelector('.hello');
+      cliclBtn.addEventListener('click', () => {
+        bg.style.display = 'block';
+        box.style.display = 'block';
+      });
+      bg.addEventListener('click', () => {
+        bg.style.display = 'none';
+        box.style.display = 'none';
+        cliclBtn.style.display = 'block';
+        hello.style.display = 'none';
+      });
+      no.addEventListener('click', () => {
+        bg.style.display = 'none';
+        box.style.display = 'none';
+      });
+      yes.addEventListener('click', () => {
+        bg2.style.display = 'block';
+        hello.style.display = 'block';
+        cliclBtn.style.display = 'none';
+        box.style.display = 'none';
+      });
+      bg2.addEventListener('click',()=>{
+        bg.style.display = 'none';
+        box.style.display = 'none';
+        cliclBtn.style.display = 'block';
+        hello.style.display = 'none';
+        bg2.style.display = 'none';
+      })
+    </script>
+  </body>
+</html>
